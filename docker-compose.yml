@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  orders-db:
+    container_name: users-ms
+    image: mysql:latest
+    restart: always
+    volumes:
+      - ./mysql_data:/var/lib/mysql
+    ports:
+      - "3309:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: jiren
+      MYSQL_DATABASE: users_ms
+
+volumes:
+  mysql_data:
